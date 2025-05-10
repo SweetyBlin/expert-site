@@ -1,0 +1,193 @@
+.btn {
+    border: none;
+    outline: none;
+    height: 50px;
+    padding: 12px 20px;
+    min-width: 100px;
+    font-weight: 600;
+    border-radius: 20px;
+    font-size: $fz-s;
+    background-image: linear-gradient(90deg, $main-color-first, $additional-color-first);
+    background-size: 150%;
+    cursor: pointer;
+    color: $white;
+    transition: $tr;
+    -webkit-box-shadow: 0px 0px 3px 0px rgba(245, 52, 69, 1);
+    -moz-box-shadow: 0px 0px 3px 0px rgba(245, 52, 69, 1);
+    box-shadow: 0px 0px 3px 0px rgba(245, 52, 69, 1);
+
+    &:hover {
+        background-position: 100%;
+    }
+}
+
+.separator{
+    height: 60%;
+    width: 1px;
+    background: $dark-gray;
+}
+
+.current-page{
+    background: $main-color-first;
+}
+
+// .message-field {
+//     height: auto;
+//     position: fixed;
+//     right: 0;
+//     bottom: 0;
+//     width: 100%;
+//     max-width: 300px;
+// }
+
+// .message {
+//     min-height: 50px;
+//     padding: 10px 20px;
+//     margin: 10px;
+//     color: $white;
+//     background: linear-gradient(90deg, #41C7AF, #54E38E);
+//     border-radius: 20px;
+//     display: flex;
+//     -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+//     -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+//     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+
+//     &__title {
+//     }
+
+//     &__desc {
+//         font-weight: 400;
+//     }
+
+//     &__close {
+//         font-weight: 600;
+//         cursor: pointer;
+//         transition: $tr;
+
+//         &:hover {
+//             color: $dark-gray-2;
+//         }
+//     }
+// }
+
+// .height {
+//     height: auto !important;
+// }
+
+// .flex {
+//     display: flex;
+//     flex-direction: column;
+//     gap: 10px;
+//     align-items: center;
+//     justify-content: center;
+// }
+
+// .notification {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     gap: 10px;
+//     text-align: center;
+
+//     &__link {
+//         font-size: $fz-s;
+//         text-decoration: underline;
+//         text-underline-offset: 3px;
+//     }
+// }
+
+// .rub {
+//     &:after {
+//         content: '₽';
+//         padding-left: 4px;
+//         font-size: $fz-s;
+//     }
+// }
+
+// .gray {
+//     color: $dark-gray-4 !important;
+// }
+
+// .inactive {
+//     cursor: not-allowed;
+// }
+
+// .weight {
+//     &:after {
+//         content: ' г';
+//     }
+// }
+
+// .cart-count {
+//     &:after {
+//         content: ' товар(а)';
+//     }
+// }
+
+// .form {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     flex-direction: column;
+//     gap: 20px;
+//     width: 100%;
+//     max-width: 400px;
+
+//     &__input {
+//         width: 100%;
+//         outline: 1px solid $white;
+//         border: solid 1px $dark-gray;
+//         padding: 16px 20px;
+//         border-radius: 20px;
+//         font-size: $fz-s;
+//         transition: $tr;
+//         background: $light-gray;
+
+//         &:hover {
+//             background: $white;
+//             outline: 1px solid $gray;
+//         }
+
+//         &::placeholder {
+//             color: $dark-gray-3;
+//         }
+
+//         &:focus {
+//             //border: none;
+//             outline: 1px solid $gray;
+//         }
+//     }
+
+//     &__error {
+//         color: $orange;
+//     }
+
+//     &__btn {
+//         margin-top: 20px;
+//         width: 100%;
+//     }
+
+//     &__outro {
+//         font-size: $fz-s;
+//         text-align: center;
+
+//         &-link {
+//             text-decoration: underline;
+//             text-underline-offset: 2px;
+//             font-size: $fz-s;
+//         }
+//     }
+// }
+
+// .hidden {
+//     display: none;
+// }
+
+// .orange-text {
+//     color: $orange;
+// }
+
+@mixin title() {
+    font-size: $fz-m;
+    margin-bottom: $fz-m * 2;
+}

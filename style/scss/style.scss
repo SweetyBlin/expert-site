@@ -1,0 +1,374 @@
+@import "base";
+@import "service";
+
+//------------------------Header
+
+.header{
+	z-index: 9999;
+	&__top{
+		padding: $default-indent * 4;
+		max-width: 1200px;
+		margin: 0 auto;
+		display: flex;
+		justify-content: space-between;
+	}
+	&-info{
+		display: flex;
+		align-items: center;
+		gap: 20px;
+		&__phone, &__address{
+			font-weight: normal;
+			display: flex;
+			align-items: center;
+			gap: $default-indent;
+		}
+		&__address{
+			&-text{
+				font-size: $fz-s;
+			}
+		}
+	}
+	&-logo{
+		display: flex;
+		align-items: center;
+		gap: $default-indent;
+		&__title{
+			font-size: $fz-m;
+			font-weight: bold;
+		}
+		&__pic{
+			height: $default-indent * 20;
+			width: $default-indent * 20;
+			&-img{
+				cursor: pointer;
+			}
+		}
+	}
+	&__bottom{
+		background: $black;
+	}
+	&__nav{
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 $default-indent * 4;
+	}
+	.menu{
+		&__list{
+			display: flex;
+			&-item{
+				border-left: 1px solid $dark-gray-5;
+				&:last-of-type{
+					border-right: 1px solid $dark-gray-5;
+
+				}
+				&:hover{
+					transition: $tr;
+					background: $dark-gray-6;
+				}
+			}
+			&-link{
+				display: block;
+				padding: 20px;
+				color: $white;
+			}
+		}
+		&__bottom{
+			display: none;
+		}
+	}
+	@media (max-width: $laptop) {
+		&-info__address {
+			display: none;
+		}
+
+		.burger{
+			display: block;
+		}
+
+		&__bottom{
+			transform: translateX(-100%);
+			position: absolute;
+			height: 100vh;
+			width: 100vw;
+			top: 0;
+			left: 0;
+			display: flex;
+			align-items: center;
+			transition: $tr;
+
+			&.animate{
+				transform: translateX(0);
+
+			}
+		}
+
+		.menu{
+			&__list{
+				flex-direction: column;
+				&-item{
+					width: calc( 100vw - ($default-indent * 8));
+					border-top: 1px solid $dark-gray-5;
+					border-left: none;
+
+					&:last-of-type{
+						border-right: none;
+						border-bottom: 1px solid $dark-gray-5;
+					}
+					&:hover{
+						transition: $tr;
+						background: $dark-gray-6;
+					}
+				}
+			}
+			&-bottom{
+				display: flex;
+				margin-top: $default-indent * 8;
+				flex-direction: column;
+				gap: $default-indent * 2;
+				align-items: center;
+				&__address, &__phone{
+					display: flex;
+					align-items: center;
+					gap: $default-indent;
+				}
+				&__address-text, &__phone-href{
+					color: $white;
+				}
+			}
+		}
+	}
+
+	@media (max-width: $tablet) {
+		.header-info__phone{
+			display: none;
+		}
+		.header{
+			&-logo{
+				&__title{
+					font-size: $fz-xs;
+				}
+			}
+		}
+	}
+
+	@media (max-width: $smart) {
+		font-size: $fz-xs;
+	}
+}
+
+//-------------------------Burger
+
+.burger {
+    display: none;
+    position: relative;
+    height: $default-indent * 6;
+    width: $default-indent * 8;
+    flex: 0 0 auto;
+    z-index: 50;
+    border: none;
+    background: none;
+
+    &__line,
+    &__line::after,
+    &__line::before {
+        width: $bar-width;
+        height: $bar-height;
+    }
+
+    &__line {
+        display: block;
+        position: absolute;
+        top: ($bar-height * -0.5);
+        border-radius: 20px;
+        background: $main-color-first;
+        transform: translateY($bar-spacing);
+        transition: all 0ms 300ms;
+    }
+
+    &__line::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: $bar-spacing;
+        border-radius: 20px;
+        background: $main-color-first;
+        transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    &__line::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: $bar-spacing;
+        border-radius: 20px;
+        background: $main-color-first;
+        transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+	@media (max-width: $tablet) {
+		&{
+			// background: #000;
+		}
+	}
+}
+
+.burger.animate > .burger__line {
+    background: $black
+}
+
+.burger.animate > .burger__line::after {
+    background: $main-color-first;
+    top: 0;
+    transform: rotate(45deg);
+    transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);;
+}
+
+.burger.animate > .burger__line::before {
+    background: $main-color-first;
+    bottom: 0;
+    transform: rotate(-45deg);
+    transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);;
+}
+
+//-------------------------Main content
+
+
+
+//------------Carousel section
+
+.carousel-container {
+	position: relative;
+	overflow: hidden;
+	padding: 0;
+  }
+  
+  .carousel-track {
+	display: flex;
+	width: 100%;
+	transition: transform 0.5s ease-in-out;
+  }
+  
+  .carousel-slide {
+	min-width: 100%;
+  }
+  
+  .carousel-slide.active {
+	opacity: 1;
+  }
+  
+  .carousel-btn {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	background: rgba(0,0,0,0.5);
+	border: none;
+	color: white;
+	padding: 10px;
+	cursor: pointer;
+	z-index: 10;
+  }
+  
+  .prev { left: 10px; }
+  .next { right: 10px; }
+  
+  .carousel-indicators {
+	position: absolute;
+	bottom: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	gap: 10px;
+  }
+  
+  .indicator {
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	background: rgba(255,255,255,0.5);
+	cursor: pointer;
+  }
+  
+  .indicator.active {
+	background: white;
+  }
+
+
+//--------------------------Footer
+
+.footer{
+	background: $black;
+	color: $white;
+	border-top: $default-indent solid $main-color-first;
+	&__container{
+		padding: $default-indent * 4;
+	}
+	&__top{
+		display: flex;
+		justify-content: space-between;
+		padding-bottom: $default-indent * 4;
+	}
+	&__bottom{
+		padding: $default-indent * 2 0;
+	}
+	&__phone{
+		display: flex;
+		align-items: center;
+		gap: $default-indent * 2;
+		&-href{
+			color: $white;
+			&:hover{
+				color: $white;
+			}
+		}
+	}
+
+	&__bottom{
+		border-top: 1px solid $dark-gray-6;
+	}
+
+	&__copyright{
+		font-size: $fz-xs;
+		text-align: center;
+	}
+
+	.menu{
+		&__list{
+			display: flex;
+			&-item{
+				
+				&:hover{
+					transition: $tr;
+					background: $dark-gray-6;
+				}
+			}
+			&-link{
+				display: block;
+				padding: 20px;
+				color: $white;
+			}
+		}
+	}
+
+	@media (max-width: $tablet) {
+		.footer{
+			&__top{
+				flex-direction: column;
+				align-items: center;
+				gap: $default-indent * 2;
+			}
+		}
+		.menu{
+			&__list{
+				&-link{
+					padding: $default-indent * 3;
+				}
+				flex-direction: column;
+				align-items: center;
+				&-item{
+					width: 100%;
+					text-align: center;
+				}
+			}
+		}
+	}
+}
