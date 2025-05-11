@@ -37,14 +37,16 @@
 
 .breadcrumbs{
     background: $gray;
-    padding: $default-indent * 4;
+    padding: $default-indent * 4 0;
     &__href{
         text-decoration: underline; 
+        text-underline-offset: 3px;
     }
     &__separator{
         margin: 0 $default-indent;
     }
     &__text{
+        font-size: $fz-xs;
         color: $dark-gray-4;
     }
 }

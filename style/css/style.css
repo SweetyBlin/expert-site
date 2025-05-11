@@ -37,6 +37,10 @@ body {
   font-family: Open Sans, Segoe UI, Roboto, Tahoma, sans-serif;
 }
 
+iframe {
+  border: none;
+}
+
 [class*=container] {
   max-width: 1200px;
   margin: 0 auto;
@@ -81,15 +85,17 @@ body {
 
 .breadcrumbs {
   background: rgba(44, 47, 57, 0.0549019608);
-  padding: 16px;
+  padding: 16px 0;
 }
 .breadcrumbs__href {
   text-decoration: underline;
+  text-underline-offset: 3px;
 }
 .breadcrumbs__separator {
   margin: 0 4px;
 }
 .breadcrumbs__text {
+  font-size: 14px;
   color: #838383;
 }
 
@@ -524,6 +530,56 @@ body {
 }
 .example-card:hover .example-card__title {
   color: #f21c1c;
+}
+
+.about {
+  padding-top: 40px;
+}
+.about__name {
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.about__title {
+  margin-bottom: 8px;
+}
+.about__subtitle {
+  font-size: 18px;
+  font-weight: 600;
+}
+.about__text, .about__list {
+  margin-bottom: 16px;
+}
+.about-list {
+  list-style: inside;
+}
+.about-list__item {
+  margin: 2px;
+}
+.about-list__title {
+  font-weight: 500;
+}
+.about-list__text, .about-list__title {
+  display: inline;
+}
+
+.contacts {
+  padding-top: 40px;
+}
+.contacts__title {
+  margin-bottom: 16px;
+}
+.contacts h3 {
+  font-weight: 600;
+}
+.contacts__content div {
+  margin-bottom: 8px;
+}
+.contacts__content a {
+  text-decoration: underline;
+}
+.contacts__info {
+  margin-bottom: 16px;
 }
 
 .footer {

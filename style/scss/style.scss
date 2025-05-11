@@ -468,10 +468,68 @@
       .example-card__photo-img {
         transform: scale(1.1);
       }
-	  .example-card__title{
-		color: $main-color-first;
-	  }
+      .example-card__title {
+        color: $main-color-first;
+      }
     }
+  }
+}
+
+//------------About Section
+
+.about {
+  padding-top: $default-indent * 10;
+  &__name {
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  &__title {
+    margin-bottom: $default-indent * 2;
+  }
+  &__subtitle {
+    font-size: $fz-m;
+    font-weight: 600;
+  }
+  &__text,
+  &__list {
+    margin-bottom: $default-indent * 4;
+  }
+  &-list {
+    list-style: inside;
+    &__item {
+      margin: $default-indent * 0.5;
+    }
+    &__title {
+      font-weight: 500;
+    }
+    &__text,
+    &__title {
+      display: inline;
+    }
+  }
+}
+
+//------------Contatc Section
+
+.contacts {
+  padding-top: $default-indent * 10;
+  &__title {
+    margin-bottom: $default-indent * 4;
+  }
+  h3{
+	font-weight: 600;
+  }
+  &__content{
+	& div{
+		margin-bottom: $default-indent * 2;
+	}
+	& a{
+		text-decoration: underline;
+	}
+  }
+  &__info{
+	margin-bottom: $default-indent * 4;
   }
 }
 

@@ -1,5 +1,3 @@
-export { InfiniteCarousel };
-
 class InfiniteCarousel {
   constructor(container) {
     this.container = container;
@@ -189,3 +187,5 @@ class InfiniteCarousel {
     this.resetAutoPlay();
   }
 }
+
+const carousel = new InfiniteCarousel(document.querySelector('.carousel__container'));
