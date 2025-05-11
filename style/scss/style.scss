@@ -510,26 +510,61 @@
   }
 }
 
-//------------Contatc Section
+//------------Contacts Section
 
 .contacts {
   padding-top: $default-indent * 10;
   &__title {
     margin-bottom: $default-indent * 4;
   }
-  h3{
-	font-weight: 600;
+  h3 {
+    font-weight: 600;
   }
-  &__content{
-	& div{
-		margin-bottom: $default-indent * 2;
-	}
-	& a{
-		text-decoration: underline;
-	}
+  &__content {
+    & div {
+      margin-bottom: $default-indent * 2;
+    }
+    & a {
+      text-decoration: underline;
+    }
   }
-  &__info{
-	margin-bottom: $default-indent * 4;
+  &__info {
+    margin-bottom: $default-indent * 4;
+  }
+  &__subtitle {
+    margin-top: $default-indent * 6;
+    margin-bottom: $default-indent * 2;
+  }
+}
+
+//------------Gallery Section
+
+.gallery {
+  padding-top: $default-indent * 10;
+  margin-bottom: $default-indent * 5;
+  h3 {
+    font-weight: 600;
+  }
+
+  &__title {
+    margin-bottom: $default-indent * 4;
+  }
+  &-case {
+    margin-bottom: $default-indent * 4;
+    &__title {
+      margin-bottom: $default-indent * 2;
+    }
+    &__gallery {
+      display: flex;
+      gap: $default-indent * 4;
+      flex-wrap: wrap;
+	  justify-content: center;
+    }
+    &__photo {
+      flex: 1 1 250px; /* flex-grow | flex-shrink | flex-basis */
+      max-width: 450px;
+      height: 400px;
+    }
   }
 }
 

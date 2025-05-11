@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./style/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="shortcut icon"
+      href="./resources/img/favicon.ico"
+      type="image/x-icon"
+    />
+    <script type="module" src="./js/app.js" defer></script>
+
+    <title>Expert-site</title>
+  </head>
+  <body class="body">
+    <div class="wrapper">
+      <header class="header">
+        <div class="header__top">
+          <div class="header__logo header-logo">
+            <div class="header-logo__pic">
+              <a href="./index.html" class="">
+                <img
+                  src="./resources/img/logo.png"
+                  alt=""
+                  class="header-logo__pic-img"
+                />
+              </a>
+            </div>
+            <a class="header-logo__title" href="./index.html">
+              АНО ПОЭКО "ДОКАЗАТЕЛЬСТВО"
+            </a>
+          </div>
+          <div class="header__info header-info">
+            <div class="header-info__phone">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 48 48"
+                fill="#000000"
+              >
+                <path
+                  fill="none"
+                  stroke="#000000"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M19.308 12.467a24.095 24.095 0 0 1-.881-4.384C18.27 6.602 16.977 5.5 15.488 5.5H8.58c-1.777 0-3.145 1.535-2.989 3.304c1.575 17.829 15.777 32.03 33.606 33.606c1.77.156 3.304-1.207 3.304-2.984v-6.16c0-2.248-1.102-3.536-2.583-3.693a24.095 24.095 0 0 1-4.384-.88a4.903 4.903 0 0 0-4.87 1.243l-2.957 2.957a31.27 31.27 0 0 1-12.599-12.599l2.957-2.957a4.903 4.903 0 0 0 1.244-4.87Z"
+                ></path>
+              </svg>
+              <a href="tel:+79209588141" class="header-info__phone-href"
+                >+7 (920) 958-81-41</a
+              >
+            </div>
+            <div class="separator"></div>
+            <div class="header-info__address">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 48 48"
+                fill="#000000"
+              >
+                <path
+                  fill="none"
+                  stroke="#000000"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M24 4.5A14.82 14.82 0 0 0 9.18 19.32h0v1.08c.6 8.12 7.34 14.65 14.82 23.1c7.81-8.82 14.82-15.5 14.82-24.18h0A14.82 14.82 0 0 0 24 4.5Zm0 7.7a7.13 7.13 0 1 1-7.13 7.12A7.13 7.13 0 0 1 24 12.2Z"
+                ></path>
+              </svg>
+              <p class="header-info__address-text">
+                г. Рязань, <br />
+                ул. Введенская, д. 115
+              </p>
+            </div>
+            <button class="burger">
+              <span class="burger__line"></span>
+            </button>
+          </div>
+        </div>
+        <div class="header__bottom">
+          <nav class="header__nav menu">
+            <ul class="menu__list">
+              <li class="menu__list-item">
+                <a href="./index.html" class="menu__list-link">Главная</a>
+              </li>
+              <li class="menu__list-item">
+                <a href="./gallery.html" class="menu__list-link current-page"
+                  >Наши работы</a
+                >
+              </li>
+              <li class="menu__list-item">
+                <a href="./about.html" class="menu__list-link">О нас</a>
+              </li>
+              <li class="menu__list-item">
+                <a href="./contacts.html" class="menu__list-link">Контакты</a>
+              </li>
+            </ul>
+            <div class="menu__bottom menu-bottom">
+              <div class="menu-bottom__phone">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 48 48"
+                  fill="#000000"
+                >
+                  <path
+                    fill="none"
+                    stroke="#ffffff"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19.308 12.467a24.095 24.095 0 0 1-.881-4.384C18.27 6.602 16.977 5.5 15.488 5.5H8.58c-1.777 0-3.145 1.535-2.989 3.304c1.575 17.829 15.777 32.03 33.606 33.606c1.77.156 3.304-1.207 3.304-2.984v-6.16c0-2.248-1.102-3.536-2.583-3.693a24.095 24.095 0 0 1-4.384-.88a4.903 4.903 0 0 0-4.87 1.243l-2.957 2.957a31.27 31.27 0 0 1-12.599-12.599l2.957-2.957a4.903 4.903 0 0 0 1.244-4.87Z"
+                  ></path>
+                </svg>
+                <a href="tel:+79209588141" class="menu-bottom__phone-href"
+                  >+7 (920) 958-81-41</a
+                >
+              </div>
+              <div class="menu-bottom__address">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 48 48"
+                  fill="#000000"
+                >
+                  <path
+                    fill="none"
+                    stroke="#ffffff"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M24 4.5A14.82 14.82 0 0 0 9.18 19.32h0v1.08c.6 8.12 7.34 14.65 14.82 23.1c7.81-8.82 14.82-15.5 14.82-24.18h0A14.82 14.82 0 0 0 24 4.5Zm0 7.7a7.13 7.13 0 1 1-7.13 7.12A7.13 7.13 0 0 1 24 12.2Z"
+                  ></path>
+                </svg>
+                <p class="menu-bottom__address-text">
+                  г. Рязань, ул. Введенская, д. 115
+                </p>
+              </div>
+            </div>
+          </nav>
+        </div>
+
+        <div class="breadcrumbs">
+          <div class="breadcrumbs__container">
+            <p class="breadcrumbs__text">
+              <a href="./index.html" class="breadcrumbs__href">Главная</a>
+              <span class="breadcrumbs__separator">/</span>
+              <span class="breadcrumbs__text">Наши работы</span>
+            </p>
+          </div>
+        </div>
+      </header>
+
+      <main class="main">
+        <section class="gallery">
+          <div class="gallery__container">
+            <h2 class="gallery__title">Наши работы</h2>
+            <div class="gallery__case gallery-case">
+              <h3 class="gallery-case__title">Пример экспертизы 1</h3>
+              <div class="gallery-case__gallery">
+                <div class="gallery-case__photo">
+                  <img
+                    src="./resources/img/slide1.jpg"
+                    alt=""
+                    class="gallery-case__photo-img"
+                  />
+                </div>
+                <div class="gallery-case__photo">
+                  <img
+                    src="./resources/img/slide1.jpg"
+                    alt=""
+                    class="gallery-case__photo-img"
+                  />
+                </div>
+                <div class="gallery-case__photo">
+                  <img
+                    src="./resources/img/slide1.jpg"
+                    alt=""
+                    class="gallery-case__photo-img"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="gallery__case gallery-case">
+              <h3 class="gallery-case__title">Пример экспертизы 2</h3>
+              <div class="gallery-case__gallery">
+                <div class="gallery-case__photo">
+                  <img
+                    src="./resources/img/slide1.jpg"
+                    alt=""
+                    class="gallery-case__photo-img"
+                  />
+                </div>
+                <div class="gallery-case__photo">
+                  <img
+                    src="./resources/img/slide1.jpg"
+                    alt=""
+                    class="gallery-case__photo-img"
+                  />
+                </div>
+                <div class="gallery-case__photo">
+                  <img
+                    src="./resources/img/slide1.jpg"
+                    alt=""
+                    class="gallery-case__photo-img"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="gallery__case gallery-case">
+              <h3 class="gallery-case__title">Пример экспертизы 3</h3>
+              <div class="gallery-case__gallery">
+                <div class="gallery-case__photo">
+                  <img
+                    src="./resources/img/slide1.jpg"
+                    alt=""
+                    class="gallery-case__photo-img"
+                  />
+                </div>
+                <div class="gallery-case__photo">
+                  <img
+                    src="./resources/img/slide1.jpg"
+                    alt=""
+                    class="gallery-case__photo-img"
+                  />
+                </div>
+                <div class="gallery-case__photo">
+                  <img
+                    src="./resources/img/slide1.jpg"
+                    alt=""
+                    class="gallery-case__photo-img"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer__container">
+          <div class="footer__top">
+            <nav class="footer__nav menu">
+              <ul class="menu__list">
+                <li class="menu__list-item">
+                  <a href="./index.html" class="menu__list-link">Главная</a>
+                </li>
+                <li class="menu__list-item">
+                  <a href="./gallery.html" class="menu__list-link"
+                    >Наши работы</a
+                  >
+                </li>
+                <li class="menu__list-item">
+                  <a href="./about.html" class="menu__list-link">О нас</a>
+                </li>
+                <li class="menu__list-item">
+                  <a href="./contacts.html" class="menu__list-link">Контакты</a>
+                </li>
+              </ul>
+            </nav>
+            <div class="footer__phone">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 48 48"
+                fill="#000000"
+              >
+                <path
+                  fill="none"
+                  stroke="#ffffff"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M19.308 12.467a24.095 24.095 0 0 1-.881-4.384C18.27 6.602 16.977 5.5 15.488 5.5H8.58c-1.777 0-3.145 1.535-2.989 3.304c1.575 17.829 15.777 32.03 33.606 33.606c1.77.156 3.304-1.207 3.304-2.984v-6.16c0-2.248-1.102-3.536-2.583-3.693a24.095 24.095 0 0 1-4.384-.88a4.903 4.903 0 0 0-4.87 1.243l-2.957 2.957a31.27 31.27 0 0 1-12.599-12.599l2.957-2.957a4.903 4.903 0 0 0 1.244-4.87Z"
+                ></path>
+              </svg>
+              <a href="tel:+79209588141" class="footer__phone-href"
+                >+7 (920) 958-81-41</a
+              >
+            </div>
+          </div>
+          <div class="footer__bottom">
+            <p class="footer__copyright">
+              © 2025 ПОЭКО "ДОКАЗАТЕЛЬСТВО" Все права защищены.
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
