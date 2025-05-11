@@ -5,7 +5,7 @@ const btn = document.querySelector(".burger");
 const menu = document.querySelector(".header__bottom");
 
 // Инициализация
-const carousel = new InfiniteCarousel(document.querySelector('.carousel-container'));
+const carousel = new InfiniteCarousel(document.querySelector('.carousel__container'));
 
 console.log(carousel);
 

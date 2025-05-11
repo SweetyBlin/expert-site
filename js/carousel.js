@@ -3,23 +3,35 @@ export { InfiniteCarousel };
 class InfiniteCarousel {
   constructor(container) {
     this.container = container;
-    this.track = container.querySelector('.carousel-track');
-    this.slides = Array.from(container.querySelectorAll('.carousel-slide'));
-    this.indicatorsContainer = container.querySelector('.carousel-indicators');
+    this.track = container.querySelector('.carousel__track');
+    this.slides = Array.from(container.querySelectorAll('.carousel__slide'));
+    this.indicatorsContainer = container.querySelector('.carousel__indicators');
     this.currentIndex = 1;
     this.autoPlayInterval = null;
     this.swipeStartX = 0;
     this.isTransitioning = false;
     this.totalRealSlides = this.slides.length - 2; // Количество основных слайдов
 
+    this.track.style.transition = 'none';
+    this.track.style.transform = `translateX(-${this.currentIndex * 100}%)`;
+    
+    // Включаем анимацию после первого рендера
+    requestAnimationFrame(() => {
+      this.track.classList.add('animated');
+    });
+
     this.init();
+
+    setTimeout(() => {
+      container.classList.add('initialized');
+    }, 50);
   }
 
   init() {
     // Создание индикаторов для основных слайдов
     for(let i = 0; i < this.totalRealSlides; i++) {
 		const indicator = document.createElement('div');
-		indicator.classList.add('indicator');
+		indicator.classList.add('carousel__indicator');
 		if(i === 0) indicator.classList.add('active');
 		indicator.addEventListener('click', () => this.goToSlide(i));
 		this.indicatorsContainer.appendChild(indicator);
@@ -27,10 +39,10 @@ class InfiniteCarousel {
 
     // Навигационные кнопки
     this.container
-      .querySelector(".prev")
+      .querySelector(".carousel__btn_prev")
       .addEventListener("click", () => this.prevSlide());
     this.container
-      .querySelector(".next")
+      .querySelector(".carousel__btn_next")
       .addEventListener("click", () => this.nextSlide());
 
     // Свайпы
@@ -56,11 +68,13 @@ class InfiniteCarousel {
     // Обновление индикаторов (игнорируем клоны)
     if (this.currentIndex >= 1 && this.currentIndex <= this.slides.length - 2) {
       const indicators =
-        this.indicatorsContainer.querySelectorAll(".indicator");
+        this.indicatorsContainer.querySelectorAll(".carousel__indicator");
       indicators.forEach((indicator, i) => {
         indicator.classList.toggle("active", i === this.currentIndex - 1);
       });
     }
+    // this.track.style.transform = `translateX(-${this.currentIndex * 100}%)`;
+    // this.updateIndicators();
   }
 
   nextSlide() {
@@ -81,21 +95,17 @@ class InfiniteCarousel {
 
   checkInfinite() {
     this.isTransitioning = false;
-
-    // Если достигли клона последнего слайда, переходим к настоящему первому
-    if (this.currentIndex === this.slides.length - 1) {
-      this.track.style.transition = "none";
+    
+    if(this.currentIndex === this.slides.length - 1) {
+      this.track.classList.remove('animated'); // Отключаем анимацию
       this.currentIndex = 1;
       this.track.style.transform = `translateX(-${this.currentIndex * 100}%)`;
+      
+      requestAnimationFrame(() => {
+        this.track.classList.add('animated'); // Включаем обратно
+      });
     }
-    // Если достигли клона первого слайда, переходим к настоящему последнему
-    else if (this.currentIndex === 0) {
-      this.track.style.transition = "none";
-      this.currentIndex = this.slides.length - 2;
-      this.track.style.transform = `translateX(-${this.currentIndex * 100}%)`;
-    }
-
-    this.resetAutoPlay();
+    // Аналогично для случая currentIndex === 0
   }
 
   goToSlide(index) {
@@ -139,7 +149,7 @@ class InfiniteCarousel {
   }
 
   startAutoPlay() {
-    this.autoPlayInterval = setInterval(() => this.nextSlide(), 7000);
+    this.autoPlayInterval = setInterval(() => this.nextSlide(), 5000);
   }
 
   resetAutoPlay() {
@@ -149,7 +159,7 @@ class InfiniteCarousel {
 
   updateIndicators() {
 	const realIndex = this.getRealIndex();
-    const indicators = this.indicatorsContainer.querySelectorAll('.indicator');
+    const indicators = this.indicatorsContainer.querySelectorAll('.carousel__indicator');
     indicators.forEach((indicator, i) => {
       indicator.classList.toggle('active', i === realIndex);
     });

@@ -8,8 +8,8 @@ $default-indent: 4px;
 $fz-xl: 36px;
 $fz-x: 24px;
 $fz-m: 18px;
-$fz-s: 14px;
-$fz-xs: 12px;
+$fz-s: 16px;
+$fz-xs: 14px;
 
 $bar-width: $default-indent * 8;
 $bar-height: $default-indent * 1;
@@ -17,12 +17,13 @@ $bar-spacing: $default-indent * 3;
 
 $white: #fff;
 $black: #2c2f39;
+$opacity: rgba(0,0,0,0.4);
 $main-color-first: #f21c1c;
 $main-color-second: #29299e;
-$additional-color-first: #8a1c16;
+$additional-color-first: #f21c1c0f;
 $additional-color-second: #20207c;
 $light-gray: #fcfcfc;
-$gray: #f3f3f3;
+$gray: #2c2f390e;
 $dark-gray: #e3e3e3;
 $dark-gray-2: #c7c7c7;
 $dark-gray-3: #a4a4a4;
@@ -46,7 +47,7 @@ $tr: all 0.2s ease-in-out;
 img{
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
 }
 
 html {
