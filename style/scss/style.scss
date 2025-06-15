@@ -25,7 +25,7 @@
     }
     &__address {
       &-text {
-        font-size: $fz-s;
+        font-size: $fz-xs;
       }
     }
   }
@@ -34,12 +34,19 @@
     align-items: center;
     gap: $default-indent;
     &__title {
-      font-size: $fz-m;
-      font-weight: bold;
+      font-size: $fz-s;
+      max-width: $default-indent * 80;
+      @media (max-width: $tablet) {
+        font-size: $fz-xs * 0.9 !important;
+      }
+      & > span {
+        font-weight: bold;
+      }
     }
     &__pic {
+      min-height: $default-indent * 20;
       height: $default-indent * 20;
-      width: $default-indent * 20;
+      min-width: $default-indent * 20;
       &-img {
         cursor: pointer;
       }
@@ -149,8 +156,10 @@
           font-size: $fz-xs;
         }
         &__pic {
-          height: $default-indent * 16;
-          width: $default-indent * 16;
+          min-height: $default-indent * 12;
+          min-width: $default-indent * 12;
+          height: $default-indent * 12;
+          width: $default-indent * 12;
           &-img {
             cursor: pointer;
           }
@@ -159,9 +168,9 @@
     }
   }
 
-  @media (max-width: $smart) {
-    font-size: $fz-xs;
-  }
+  // @media (max-width: $smart) {
+  //   font-size: $fz-xs;
+  // }
 }
 
 //-------------------------Burger
@@ -267,7 +276,6 @@
 
   &__slide {
     min-width: 100%;
-    padding: 0 $default-indent * 4;
   }
 
   &__slide.active {
@@ -341,7 +349,7 @@
   &__info {
     background: $opacity;
     position: absolute;
-    margin-left: $default-indent * 4;
+    margin-left: $default-indent * 8;
     bottom: 30%;
     padding: $default-indent * 4;
     width: 50%;
@@ -378,47 +386,33 @@
 
 //------------Advantagegs Section
 
-.advantages {
+.director {
+  padding: $default-indent * 4;
+  &__container {
+    padding: 0;
+  }
   @include section-margin();
   &__title {
     @include title();
   }
   &__main {
     display: flex;
-    flex-wrap: wrap;
-    gap: $default-indent * 5;
-  }
-  &-card {
-    display: flex;
-    flex: 1;
-    width: 100%;
-    padding: $default-indent * 2;
-    min-width: 350px;
-    transition: $tr;
+    gap: $default-indent * 10;
     align-items: center;
-    &__title {
-      margin-bottom: $default-indent * 2;
-    }
-
-    &__text {
-      @include regular-text();
-    }
-    &__photo {
-      width: $default-indent * 30;
-      @media (max-width: $tablet) {
-        & {
-          width: $default-indent * 15;
-        }
-      }
-    }
-    &:hover {
-      background: $additional-color-first;
-    }
     @media (max-width: $tablet) {
       & {
-        min-width: 100%;
+        flex-direction: column-reverse;
       }
     }
+  }
+
+  &__photo {
+    width: 250px;
+    // flex: 1 1 50%;
+  }
+
+  &__description {
+    flex: 1 1 80%;
   }
 }
 
@@ -428,6 +422,9 @@
   background: $gray;
   padding: $default-indent * 4;
 
+  &__container {
+    padding: 0;
+  }
   &__title {
     @include title();
   }
@@ -496,7 +493,8 @@
     margin-bottom: $default-indent * 4;
   }
   &-list {
-    list-style: inside;
+    padding-left: $default-indent * 3;
+    list-style-type:"– ";
     &__item {
       margin: $default-indent * 0.5;
     }
@@ -545,25 +543,50 @@
   h3 {
     font-weight: 600;
   }
-
   &__title {
     margin-bottom: $default-indent * 4;
   }
-  &-case {
+  &__case {
+    display: flex;
+    gap: $default-indent * 4;
+    flex-wrap: wrap;
     margin-bottom: $default-indent * 4;
     &__title {
       margin-bottom: $default-indent * 2;
     }
-    &__gallery {
-      display: flex;
-      gap: $default-indent * 4;
-      flex-wrap: wrap;
-	  justify-content: center;
+  }
+  &-card {
+    flex: 1 1;
+    min-width: 300px;
+    background: $white;
+    border: 1px solid $dark-gray;
+    &__bottom {
+      padding: $default-indent * 4;
     }
+
+    &__title {
+      margin-bottom: $default-indent * 2;
+    }
+
+    &__text {
+      @include regular-text();
+    }
+
     &__photo {
-      flex: 1 1 250px; /* flex-grow | flex-shrink | flex-basis */
-      max-width: 450px;
-      height: 400px;
+      overflow: hidden;
+      height: 350px;
+      &-img {
+        transition: $tr;
+      }
+    }
+
+    &:hover {
+      .gallery-card__photo-img {
+        transform: scale(1.1);
+      }
+      .gallery-card__title {
+        color: $main-color-first;
+      }
     }
   }
 }
@@ -579,14 +602,29 @@
   }
   &__top {
     display: flex;
+    flex-wrap: wrap;
+    gap: $default-indent * 4;
     justify-content: space-between;
+    align-items: start;
     padding-bottom: $default-indent * 4;
   }
-  &__bottom {
-    padding: $default-indent * 2 0;
-  }
-  &__phone {
+  &__column {
+    // max-width: 300px;
+
+    min-width: 200px;
     display: flex;
+    flex-direction: column;
+    border-top: 1px solid $dark-gray-6;
+  }
+  &__bottom {
+    padding-top: $default-indent * 4;
+    border-top: 1px solid $dark-gray-6;
+  }
+  &__phone,
+  &__address {
+    display: flex;
+    padding: $default-indent * 2;
+
     align-items: center;
     gap: $default-indent * 2;
     &-href {
@@ -596,19 +634,33 @@
       }
     }
   }
-
-  &__bottom {
-    border-top: 1px solid $dark-gray-6;
+  &__additional-info {
+    padding: $default-indent * 3;
+    font-size: $fz-xs;
+    @media (max-width: $tablet) {
+      & {
+        font-size: $fz-xs * 0.8;
+      }
+    }
   }
 
   &__copyright {
-    font-size: $fz-xs;
+    font-size: $fz-xs * 0.8;
     text-align: center;
   }
 
   .menu {
     &__list {
       display: flex;
+      &-link {
+        padding: $default-indent * 3;
+      }
+      flex-direction: column;
+      align-items: center;
+      &-item {
+        width: 100%;
+        text-align: center;
+      }
       &-item {
         &:hover {
           transition: $tr;
@@ -617,8 +669,8 @@
       }
       &-link {
         display: block;
-        padding: 20px;
         color: $white;
+        text-align: start;
       }
     }
   }
@@ -626,22 +678,13 @@
   @media (max-width: $tablet) {
     .footer {
       &__top {
-        flex-direction: column;
-        align-items: center;
+        // align-items: center;
         gap: $default-indent * 2;
+        justify-content: center;
+        flex: 0 0 100%;
       }
-    }
-    .menu {
-      &__list {
-        &-link {
-          padding: $default-indent * 3;
-        }
-        flex-direction: column;
-        align-items: center;
-        &-item {
-          width: 100%;
-          text-align: center;
-        }
+      &__column {
+        width: 100%;
       }
     }
   }
