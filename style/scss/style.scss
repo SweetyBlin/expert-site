@@ -401,6 +401,7 @@
     align-items: center;
     @media (max-width: $tablet) {
       & {
+        gap: $default-indent * 4;
         flex-direction: column-reverse;
       }
     }
@@ -495,7 +496,7 @@
   }
   &-list {
     padding-left: $default-indent * 3;
-    list-style-type:"– ";
+    list-style-type: "– ";
     &__item {
       margin: $default-indent * 0.5;
     }
@@ -507,11 +508,11 @@
       display: inline;
     }
   }
-  &__link{
+  &__link {
     display: inline-block;
     text-decoration: underline;
   }
-  .small{
+  .small {
     font-size: $fz-xs;
   }
 }
@@ -541,9 +542,8 @@
     margin-top: $default-indent * 6;
     margin-bottom: $default-indent * 2;
   }
-  &__organization{
-    &__title{
-      
+  &__organization {
+    &__title {
     }
   }
 }
