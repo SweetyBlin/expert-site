@@ -487,6 +487,7 @@
   &__subtitle {
     font-size: $fz-m;
     font-weight: 600;
+    margin-bottom: $default-indent * 2;
   }
   &__text,
   &__list {
@@ -505,6 +506,13 @@
     &__title {
       display: inline;
     }
+  }
+  &__link{
+    display: inline-block;
+    text-decoration: underline;
+  }
+  .small{
+    font-size: $fz-xs;
   }
 }
 
@@ -532,6 +540,11 @@
   &__subtitle {
     margin-top: $default-indent * 6;
     margin-bottom: $default-indent * 2;
+  }
+  &__organization{
+    &__title{
+      
+    }
   }
 }
 

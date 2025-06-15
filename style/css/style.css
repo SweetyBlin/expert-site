@@ -532,6 +532,7 @@ iframe {
 .about__subtitle {
   font-size: 18px;
   font-weight: 600;
+  margin-bottom: 8px;
 }
 .about__text, .about__list {
   margin-bottom: 16px;
@@ -548,6 +549,13 @@ iframe {
 }
 .about-list__text, .about-list__title {
   display: inline;
+}
+.about__link {
+  display: inline-block;
+  text-decoration: underline;
+}
+.about .small {
+  font-size: 14px;
 }
 
 .contacts {
@@ -572,7 +580,6 @@ iframe {
   margin-top: 24px;
   margin-bottom: 8px;
 }
-
 .gallery {
   padding-top: 40px;
   margin-bottom: 20px;
