@@ -392,6 +392,7 @@ iframe {
 }
 .slide__info {
   background: rgba(0, 0, 0, 0.4);
+  display: none;
   position: absolute;
   margin-left: 32px;
   bottom: 30%;

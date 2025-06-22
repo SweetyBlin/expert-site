@@ -348,6 +348,7 @@
 
   &__info {
     background: $opacity;
+    display: none;
     position: absolute;
     margin-left: $default-indent * 8;
     bottom: 30%;
